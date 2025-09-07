@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan Gabriel Camino F. - Tarjeta Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #2c3e50;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e8ecef;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2c5282 0%, #3182ce 50%, #4299e1 100%);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #f7fafc;
+        }
+
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: #2c5282;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(44, 82, 130, 0.2);
+        }
+
+        .name {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 16px;
+            color: #4a5568;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+            margin-left: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            padding: 12px 0;
+            transition: all 0.2s ease;
+        }
+
+        .info-item:hover {
+            background: #f8fafc;
+            padding-left: 8px;
+            border-radius: 6px;
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: #edf2f7;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: #2c5282;
+            font-size: 16px;
+        }
+
+        .info-content {
+            flex: 1;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: #718096;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .info-text {
+            font-size: 15px;
+            color: #2d3748;
+            font-weight: 500;
+        }
+
+        .signature-section {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .signature-title {
+            font-size: 12px;
+            color: #4a5568;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .signature-image {
+            font-family: 'Times New Roman', serif;
+            font-size: 32px;
+            color: #1a202c;
+            font-style: italic;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .signature-date {
+            font-size: 11px;
+            color: #718096;
+            font-weight: 500;
+        }
+
+        .professional-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .professional-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 16px;
+            background: #2c5282;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+        }
+
+        .professional-link:hover {
+            background: #2a4e7c;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(44, 82, 130, 0.3);
+        }
+
+        .qr-notice {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background: #ebf8ff;
+            border-radius: 8px;
+            border-left: 4px solid #3182ce;
+        }
+
+        .qr-notice-text {
+            font-size: 12px;
+            color: #2c5282;
+            font-weight: 500;
+        }
+
+        /* Iconos profesionales usando Unicode */
+        .icon-email::before { content: "✉"; }
+        .icon-phone::before { content: "☎"; }
+        .icon-location::before { content: "⚲"; }
+        .icon-web::before { content: "⊞"; }
+        .icon-linkedin::before { content: "⚈"; }
+        .icon-portfolio::before { content: "⚏"; }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 30px 25px;
+                margin: 10px;
+            }
+            
+            .name {
+                font-size: 22px;
+            }
+            
+            .professional-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .signature-image {
+                font-size: 28px;
+            }
+        }
+
+        /* Animación sutil */
+        .card {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="profile-photo">
+                BC
+            </div>
+            <div class="name">Bryan Gabriel Camino F.</div>
+            <div class="title">Director General</div>
+        </div>
+
+        <div class="contact-section">
+            <div class="section-title">Información de Contacto</div>
+            
+            <div class="info-item">
+                <div class="info-icon icon-email"></div>
+                <div class="info-content">
+                    <div class="info-label">Email</div>
+                    <div class="info-text">innovafoodgc21@gmail.com</div>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon icon-phone"></div>
+                <div class="info-content">
+                    <div class="info-label">Teléfono</div>
+                    <div class="info-text">+593 99 842 6977</div>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon icon-location"></div>
+                <div class="info-content">
+                    <div class="info-label">Ubicación</div>
+                    <div class="info-text">Valencia, España</div>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon icon-web"></div>
+                <div class="info-content">
+                    <div class="info-label">Perfil</div>
+                    <div class="info-text">Facebook Profile</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signature-section">
+            <div class="signature-title">Firma Autorizada</div>
+            <div class="signature-image">Dir. General. Bryan Camino</div>
+            <div class="signature-date">Válida desde septiembre 2025</div>
+        </div>
+
+        <div class="professional-links">
+            <a href="https://www.facebook.com/profile.php?id=100067747509320" class="professional-link" target="_blank">
+                Facebook
+            </a>
+            <a href="mailto:innovafoodgc21@gmail.com" class="professional-link">
+                Email
+            </a>
+            <a href="https://wa.me/59398426977" class="professional-link" target="_blank">
+                WhatsApp
+            </a>
+        </div>
+
+        <div class="qr-notice">
+            <div class="qr-notice-text">
+                Tarjeta Digital Profesional - Actualizada automáticamente
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar fecha actual en la firma
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateElement = document.querySelector('.signature-date');
+            const now = new Date();
+            const monthNames = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
+                "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+            
+            dateElement.textContent = `Válida desde ${monthNames[now.getMonth()]} ${now.getFullYear()}`;
+        });
+
+        // Efecto profesional en hover
+        document.querySelectorAll('.info-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(4px)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
