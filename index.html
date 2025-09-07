@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bryan Gabriel Camino F. - INNOVAFOOD G.C.</title>
+    <title>Firma Digital Autorizada - Dir. General Bryan Camino</title>
     <style>
         * {
             margin: 0;
@@ -12,561 +12,381 @@
         }
 
         body {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            font-family: 'Times New Roman', 'Georgia', serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            animation: gradientShift 8s ease infinite;
         }
 
-        @keyframes gradientShift {
-            0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); }
-            50% { background: linear-gradient(135deg, #f093fb 0%, #764ba2 50%, #667eea 100%); }
-        }
-
-        .card-container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 25px;
-            padding: 0;
-            max-width: 480px;
+        .signature-document {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 50px 40px;
+            max-width: 600px;
             width: 100%;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border: 3px solid #e2e8f0;
             position: relative;
-        }
-
-        .card-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
-            background-size: 300% 300%;
-            animation: rainbowFlow 3s ease infinite;
-        }
-
-        @keyframes rainbowFlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
-            padding: 40px 30px 30px 30px;
             text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
         }
 
-        .hero-section::after {
+        .signature-document::before {
             content: '';
             position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 30px;
-            background: white;
-            border-radius: 30px 30px 0 0;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            pointer-events: none;
         }
 
-        .company-logo-container {
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 25px;
-            background: white;
-            border-radius: 25px;
+        .document-header {
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #1e40af;
+        }
+
+        .document-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .official-seal {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
             position: relative;
-            transform: rotate(-5deg);
-            transition: all 0.4s ease;
         }
 
-        .company-logo-container:hover {
-            transform: rotate(0deg) scale(1.05);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
-        }
-
-        .logo-svg {
-            width: 75px;
-            height: 75px;
-            fill: #333;
-        }
-
-        .company-brand {
-            font-size: 26px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .company-slogan {
-            font-size: 14px;
-            opacity: 0.95;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-
-        .main-content {
-            padding: 35px 30px;
-        }
-
-        .person-info {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .person-name {
-            font-size: 26px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ff6b6b, #feca57);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 8px;
-        }
-
-        .person-title {
-            font-size: 16px;
-            color: #666;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-section {
-            margin-bottom: 30px;
-        }
-
-        .contact-items {
-            display: grid;
-            gap: 15px;
-        }
-
-        .contact-row {
-            display: flex;
-            align-items: center;
-            padding: 18px 20px;
-            background: linear-gradient(135deg, #f8f9ff 0%, #fff5f5 100%);
-            border-radius: 18px;
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .contact-row::before {
+        .official-seal::before {
             content: '';
             position: absolute;
-            inset: 0;
-            padding: 2px;
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb);
-            border-radius: 18px;
+            inset: -3px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(45deg, #1e40af, #3b82f6, #1e40af);
             mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
-        .contact-row:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        .signature-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8fafc;
+            border: 2px dashed #64748b;
+            border-radius: 12px;
+            position: relative;
         }
 
-        .contact-row:hover::before {
-            opacity: 1;
-        }
-
-        .contact-icon-wrapper {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #ff6b6b, #feca57);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 18px;
-            color: white;
-            font-size: 20px;
-            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-type {
-            font-size: 12px;
-            color: #888;
-            font-weight: 700;
+        .signature-label {
+            font-size: 14px;
+            color: #475569;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
-
-        .contact-data {
-            font-size: 15px;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .signature-area {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
             margin-bottom: 25px;
-            color: white;
-            position: relative;
-            overflow: hidden;
         }
 
-        .signature-area::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        .signature-header {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-
-        .signature-text {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 34px;
+        .digital-signature {
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+            font-size: 48px;
+            color: #1e293b;
             font-style: italic;
+            margin: 20px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            transform: rotate(-2deg);
+            position: relative;
+        }
+
+        .signature-line {
+            width: 100%;
+            height: 2px;
+            background: #cbd5e1;
+            margin-top: 15px;
+            position: relative;
+        }
+
+        .signature-line::after {
+            content: 'Firma Digital';
+            position: absolute;
+            right: 0;
+            top: 10px;
+            font-size: 10px;
+            color: #64748b;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .validity-section {
+            margin-top: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+            border: 2px solid #22c55e;
+            border-radius: 12px;
+        }
+
+        .validity-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #166534;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .validity-dates {
+            font-size: 18px;
+            color: #1e293b;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .validity-from {
+            color: #059669;
+        }
+
+        .validity-until {
+            color: #dc2626;
+        }
+
+        .authentication-code {
+            margin-top: 30px;
+            padding: 20px;
+            background: #1e293b;
+            color: white;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .auth-label {
+            font-size: 12px;
+            opacity: 0.7;
             margin-bottom: 8px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        .signature-date {
-            font-size: 11px;
-            opacity: 0.8;
-            font-weight: 500;
+        .auth-code {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
         }
 
-        .action-links {
+        .security-features {
+            margin-top: 30px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-
-        .action-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 12px;
-            background: linear-gradient(135deg, #54a0ff, #5f27cd);
-            color: white;
-            text-decoration: none;
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .action-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .action-link:hover::before {
-            left: 100%;
-        }
-
-        .action-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(84, 160, 255, 0.4);
-        }
-
-        .footer-badge {
+            gap: 20px;
             text-align: center;
-            margin-top: 25px;
+        }
+
+        .security-item {
             padding: 15px;
-            background: linear-gradient(135deg, #f1f2f6 0%, #ddd6fe 100%);
-            border-radius: 15px;
-            border: 2px solid #e0e6ff;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
         }
 
-        .footer-text {
-            font-size: 11px;
-            color: #666;
+        .security-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .security-text {
+            font-size: 12px;
+            color: #475569;
             font-weight: 600;
-            letter-spacing: 0.5px;
         }
 
-        /* Iconos */
-        .icon-email::before { content: "💌"; }
-        .icon-phone::before { content: "📱"; }
-        .icon-location::before { content: "🌍"; }
-        .icon-web::before { content: "🔗"; }
+        .timestamp {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 10px;
+            color: #64748b;
+            font-family: 'Courier New', monospace;
+        }
 
         @media (max-width: 600px) {
-            .card-container {
+            .signature-document {
+                padding: 40px 25px;
                 margin: 10px;
             }
             
-            .hero-section, .main-content {
-                padding: 30px 20px;
-            }
-            
-            .person-name {
+            .document-title {
                 font-size: 22px;
             }
             
-            .signature-text {
-                font-size: 28px;
+            .digital-signature {
+                font-size: 36px;
             }
             
-            .action-links {
+            .security-features {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
         }
 
-        /* Animación de entrada */
-        .card-container {
-            animation: bounceIn 0.8s ease-out;
+        /* Animaciones */
+        .signature-document {
+            animation: documentLoad 0.8s ease-out;
         }
 
-        @keyframes bounceIn {
-            0% {
+        @keyframes documentLoad {
+            from {
                 opacity: 0;
-                transform: scale(0.3);
+                transform: translateY(20px);
             }
-            50% {
+            to {
                 opacity: 1;
-                transform: scale(1.05);
+                transform: translateY(0);
             }
-            70% {
-                transform: scale(0.9);
+        }
+
+        .digital-signature {
+            animation: signatureWrite 2s ease-in-out 0.5s both;
+        }
+
+        @keyframes signatureWrite {
+            from {
+                opacity: 0;
+                transform: translateX(-50px) rotate(-2deg);
             }
-            100% {
+            to {
                 opacity: 1;
-                transform: scale(1);
+                transform: translateX(0) rotate(-2deg);
             }
+        }
+
+        /* Efectos de seguridad */
+        .signature-section::before {
+            content: 'AUTORIZADA';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 80px;
+            font-weight: bold;
+            color: rgba(34, 197, 94, 0.1);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .digital-signature {
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
 <body>
-    <div class="card-container">
-        <div class="hero-section">
-            <div class="company-logo-container">
-                <svg class="logo-svg" viewBox="0 0 100 100">
-                    <!-- Círculo exterior -->
-                    <circle cx="50" cy="50" r="48" fill="none" stroke="#333" stroke-width="2"/>
-                    
-                    <!-- Texto INNOVAFOOD curvado superior -->
-                    <path id="curve-top" d="M 15 50 A 35 35 0 0 1 85 50" fill="none"/>
-                    <text font-family="Arial" font-size="8" font-weight="bold" fill="#333">
-                        <textPath href="#curve-top" startOffset="50%" text-anchor="middle">INNOVAFOOD</textPath>
-                    </text>
-                    
-                    <!-- Abeja central -->
-                    <g transform="translate(50,50)">
-                        <!-- Cuerpo -->
-                        <ellipse cx="0" cy="0" rx="8" ry="12" fill="#333"/>
-                        <ellipse cx="0" cy="-3" rx="6" ry="3" fill="none" stroke="#333" stroke-width="1"/>
-                        <ellipse cx="0" cy="3" rx="6" ry="3" fill="none" stroke="#333" stroke-width="1"/>
-                        
-                        <!-- Alas -->
-                        <ellipse cx="-8" cy="-6" rx="6" ry="4" fill="none" stroke="#333" stroke-width="1.5"/>
-                        <ellipse cx="8" cy="-6" rx="6" ry="4" fill="none" stroke="#333" stroke-width="1.5"/>
-                        <ellipse cx="-6" cy="-8" rx="4" ry="3" fill="none" stroke="#333" stroke-width="1"/>
-                        <ellipse cx="6" cy="-8" rx="4" ry="3" fill="none" stroke="#333" stroke-width="1"/>
-                        
-                        <!-- Antenas -->
-                        <line x1="-2" y1="-12" x2="-4" y2="-16" stroke="#333" stroke-width="1"/>
-                        <line x1="2" y1="-12" x2="4" y2="-16" stroke="#333" stroke-width="1"/>
-                        <circle cx="-4" cy="-16" r="1" fill="#333"/>
-                        <circle cx="4" cy="-16" r="1" fill="#333"/>
-                    </g>
-                    
-                    <!-- Texto G.C. curvado inferior -->
-                    <path id="curve-bottom" d="M 85 50 A 35 35 0 0 1 15 50" fill="none"/>
-                    <text font-family="Arial" font-size="8" font-weight="bold" fill="#333">
-                        <textPath href="#curve-bottom" startOffset="50%" text-anchor="middle">G . C</textPath>
-                    </text>
-                </svg>
+    <div class="signature-document">
+        <div class="document-header">
+            <div class="official-seal">
+                ✓
             </div>
-            <div class="company-brand">INNOVAFOOD G.C.</div>
-            <div class="company-slogan">🚀 Innovación que Alimenta el Futuro ✨</div>
+            <div class="document-title">Firma Digital Autorizada</div>
         </div>
 
-        <div class="main-content">
-            <div class="person-info">
-                <div class="person-name">Bryan Gabriel Camino F.</div>
-                <div class="person-title">🎯 Director General 👑</div>
-            </div>
+        <div class="signature-section">
+            <div class="signature-label">Firma Digital Certificada</div>
+            <div class="digital-signature">Dir. General. Bryan Camino</div>
+            <div class="signature-line"></div>
+        </div>
 
-            <div class="contact-section">
-                <div class="contact-items">
-                    <div class="contact-row">
-                        <div class="contact-icon-wrapper icon-email"></div>
-                        <div class="contact-info">
-                            <div class="contact-type">Email Ejecutivo</div>
-                            <div class="contact-data">innovafoodgc21@gmail.com</div>
-                        </div>
-                    </div>
-
-                    <div class="contact-row">
-                        <div class="contact-icon-wrapper icon-phone"></div>
-                        <div class="contact-info">
-                            <div class="contact-type">Línea Directa</div>
-                            <div class="contact-data">+593 99 842 6977</div>
-                        </div>
-                    </div>
-
-                    <div class="contact-row">
-                        <div class="contact-icon-wrapper icon-location"></div>
-                        <div class="contact-info">
-                            <div class="contact-type">Oficina Principal</div>
-                            <div class="contact-data">Valencia, España 🇪🇸</div>
-                        </div>
-                    </div>
-
-                    <div class="contact-row">
-                        <div class="contact-icon-wrapper icon-web"></div>
-                        <div class="contact-info">
-                            <div class="contact-type">Redes Sociales</div>
-                            <div class="contact-data">Facebook Business 📘</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="signature-area">
-                <div class="signature-header">✍️ Firma Digital Autorizada</div>
-                <div class="signature-text">Dir. General. Bryan Camino</div>
-                <div class="signature-date">Válida desde septiembre 2025</div>
-            </div>
-
-            <div class="action-links">
-                <a href="https://www.facebook.com/profile.php?id=100067747509320" class="action-link" target="_blank">
-                    📘 Facebook
-                </a>
-                <a href="mailto:innovafoodgc21@gmail.com" class="action-link">
-                    📧 Email
-                </a>
-                <a href="https://wa.me/59398426977" class="action-link" target="_blank">
-                    💬 WhatsApp
-                </a>
-            </div>
-
-            <div class="footer-badge">
-                <div class="footer-text">
-                    🌟 INNOVAFOOD G.C. • Tarjeta Digital Inteligente • 2025 ✨
-                </div>
+        <div class="validity-section">
+            <div class="validity-title">Período de Validez</div>
+            <div class="validity-dates">
+                <div><strong>Válida desde:</strong> <span class="validity-from">Septiembre 2025</span></div>
+                <div><strong>Válida hasta:</strong> <span class="validity-until">Septiembre 2026</span></div>
             </div>
         </div>
+
+        <div class="authentication-code">
+            <div class="auth-label">Código de Autenticación:</div>
+            <div class="auth-code">BGC-2025-INNOV-7849</div>
+        </div>
+
+        <div class="security-features">
+            <div class="security-item">
+                <div class="security-icon">🔒</div>
+                <div class="security-text">Certificado<br>Digital</div>
+            </div>
+            <div class="security-item">
+                <div class="security-icon">✅</div>
+                <div class="security-text">Verificación<br>Automática</div>
+            </div>
+            <div class="security-item">
+                <div class="security-icon">🕐</div>
+                <div class="security-text">Marca de<br>Tiempo</div>
+            </div>
+        </div>
+
+        <div class="timestamp" id="timestamp"></div>
     </div>
 
     <script>
-        // Fecha automática
+        // Generar timestamp actual
         document.addEventListener('DOMContentLoaded', function() {
-            const dateElement = document.querySelector('.signature-date');
+            const timestampElement = document.getElementById('timestamp');
             const now = new Date();
-            const monthNames = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
-                "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
-            
-            dateElement.textContent = `Válida desde ${monthNames[now.getMonth()]} ${now.getFullYear()}`;
-        });
-
-        // Efectos interactivos mejorados
-        document.querySelectorAll('.contact-row').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px) scale(1.02)';
+            const timestamp = now.toLocaleString('es-ES', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
             });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
+            timestampElement.textContent = `Generado: ${timestamp}`;
         });
 
-        // Efecto especial en el logo
-        document.querySelector('.company-logo-container').addEventListener('click', function() {
-            this.style.animation = 'none';
-            this.offsetHeight; // trigger reflow
-            this.style.animation = 'bounceIn 0.6s ease-out';
-        });
-
-        // Partículas flotantes (efecto visual)
-        function createFloatingEmoji() {
-            const emojis = ['✨', '🚀', '💫', '⭐', '🌟'];
-            const emoji = document.createElement('div');
-            emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-            emoji.style.position = 'fixed';
-            emoji.style.left = Math.random() * 100 + 'vw';
-            emoji.style.animationDuration = Math.random() * 3 + 2 + 's';
-            emoji.style.opacity = Math.random();
-            emoji.style.fontSize = Math.random() * 10 + 10 + 'px';
-            emoji.style.animation = 'floatUp 4s ease-in-out infinite';
-            emoji.style.pointerEvents = 'none';
-            emoji.style.zIndex = '-1';
-            
-            document.body.appendChild(emoji);
+        // Efecto de validación visual
+        document.querySelector('.signature-section').addEventListener('click', function() {
+            this.style.borderColor = '#22c55e';
+            this.style.backgroundColor = '#f0fdf4';
             
             setTimeout(() => {
-                emoji.remove();
-            }, 4000);
-        }
+                this.style.borderColor = '#64748b';
+                this.style.backgroundColor = '#f8fafc';
+            }, 2000);
+        });
 
-        // Crear partículas cada 3 segundos
-        setInterval(createFloatingEmoji, 3000);
+        // Animación del sello oficial
+        document.querySelector('.official-seal').addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1) rotate(10deg)';
+        });
 
-        // CSS para la animación de partículas
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes floatUp {
-                0% {
-                    bottom: -50px;
-                    transform: translateX(0px) rotate(0deg);
-                    opacity: 1;
-                }
-                100% {
-                    bottom: 100vh;
-                    transform: translateX(-200px) rotate(180deg);
-                    opacity: 0;
-                }
+        document.querySelector('.official-seal').addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0deg)';
+        });
+
+        // Efecto de protección contra copias
+        document.addEventListener('selectstart', function(e) {
+            if (e.target.closest('.digital-signature')) {
+                e.preventDefault();
             }
-        `;
-        document.head.appendChild(style);
+        });
+
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.closest('.signature-document')) {
+                e.preventDefault();
+            }
+        });
     </script>
 </body>
 </html>
