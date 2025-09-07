@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan Gabriel Camino F. - INNOVAFOOD G.C.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); }
+            50% { background: linear-gradient(135deg, #f093fb 0%, #764ba2 50%, #667eea 100%); }
+        }
+
+        .card-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 0;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+            background-size: 300% 300%;
+            animation: rainbowFlow 3s ease infinite;
+        }
+
+        @keyframes rainbowFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+            padding: 40px 30px 30px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 30px;
+            background: white;
+            border-radius: 30px 30px 0 0;
+        }
+
+        .company-logo-container {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 25px;
+            background: white;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transform: rotate(-5deg);
+            transition: all 0.4s ease;
+        }
+
+        .company-logo-container:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-svg {
+            width: 75px;
+            height: 75px;
+            fill: #333;
+        }
+
+        .company-brand {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .company-slogan {
+            font-size: 14px;
+            opacity: 0.95;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .main-content {
+            padding: 35px 30px;
+        }
+
+        .person-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .person-name {
+            font-size: 26px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .person-title {
+            font-size: 16px;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-section {
+            margin-bottom: 30px;
+        }
+
+        .contact-items {
+            display: grid;
+            gap: 15px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            padding: 18px 20px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff5f5 100%);
+            border-radius: 18px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .contact-row::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 2px;
+            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb);
+            border-radius: 18px;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-row:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-row:hover::before {
+            opacity: 1;
+        }
+
+        .contact-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 18px;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-type {
+            font-size: 12px;
+            color: #888;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .contact-data {
+            font-size: 15px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .signature-area {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .signature-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .signature-header {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .signature-text {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 34px;
+            font-style: italic;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .signature-date {
+            font-size: 11px;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .action-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .action-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 12px;
+            background: linear-gradient(135deg, #54a0ff, #5f27cd);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .action-link:hover::before {
+            left: 100%;
+        }
+
+        .action-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(84, 160, 255, 0.4);
+        }
+
+        .footer-badge {
+            text-align: center;
+            margin-top: 25px;
+            padding: 15px;
+            background: linear-gradient(135deg, #f1f2f6 0%, #ddd6fe 100%);
+            border-radius: 15px;
+            border: 2px solid #e0e6ff;
+        }
+
+        .footer-text {
+            font-size: 11px;
+            color: #666;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Iconos */
+        .icon-email::before { content: "💌"; }
+        .icon-phone::before { content: "📱"; }
+        .icon-location::before { content: "🌍"; }
+        .icon-web::before { content: "🔗"; }
+
+        @media (max-width: 600px) {
+            .card-container {
+                margin: 10px;
+            }
+            
+            .hero-section, .main-content {
+                padding: 30px 20px;
+            }
+            
+            .person-name {
+                font-size: 22px;
+            }
+            
+            .signature-text {
+                font-size: 28px;
+            }
+            
+            .action-links {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animación de entrada */
+        .card-container {
+            animation: bounceIn 0.8s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="hero-section">
+            <div class="company-logo-container">
+                <svg class="logo-svg" viewBox="0 0 100 100">
+                    <!-- Círculo exterior -->
+                    <circle cx="50" cy="50" r="48" fill="none" stroke="#333" stroke-width="2"/>
+                    
+                    <!-- Texto INNOVAFOOD curvado superior -->
+                    <path id="curve-top" d="M 15 50 A 35 35 0 0 1 85 50" fill="none"/>
+                    <text font-family="Arial" font-size="8" font-weight="bold" fill="#333">
+                        <textPath href="#curve-top" startOffset="50%" text-anchor="middle">INNOVAFOOD</textPath>
+                    </text>
+                    
+                    <!-- Abeja central -->
+                    <g transform="translate(50,50)">
+                        <!-- Cuerpo -->
+                        <ellipse cx="0" cy="0" rx="8" ry="12" fill="#333"/>
+                        <ellipse cx="0" cy="-3" rx="6" ry="3" fill="none" stroke="#333" stroke-width="1"/>
+                        <ellipse cx="0" cy="3" rx="6" ry="3" fill="none" stroke="#333" stroke-width="1"/>
+                        
+                        <!-- Alas -->
+                        <ellipse cx="-8" cy="-6" rx="6" ry="4" fill="none" stroke="#333" stroke-width="1.5"/>
+                        <ellipse cx="8" cy="-6" rx="6" ry="4" fill="none" stroke="#333" stroke-width="1.5"/>
+                        <ellipse cx="-6" cy="-8" rx="4" ry="3" fill="none" stroke="#333" stroke-width="1"/>
+                        <ellipse cx="6" cy="-8" rx="4" ry="3" fill="none" stroke="#333" stroke-width="1"/>
+                        
+                        <!-- Antenas -->
+                        <line x1="-2" y1="-12" x2="-4" y2="-16" stroke="#333" stroke-width="1"/>
+                        <line x1="2" y1="-12" x2="4" y2="-16" stroke="#333" stroke-width="1"/>
+                        <circle cx="-4" cy="-16" r="1" fill="#333"/>
+                        <circle cx="4" cy="-16" r="1" fill="#333"/>
+                    </g>
+                    
+                    <!-- Texto G.C. curvado inferior -->
+                    <path id="curve-bottom" d="M 85 50 A 35 35 0 0 1 15 50" fill="none"/>
+                    <text font-family="Arial" font-size="8" font-weight="bold" fill="#333">
+                        <textPath href="#curve-bottom" startOffset="50%" text-anchor="middle">G . C</textPath>
+                    </text>
+                </svg>
+            </div>
+            <div class="company-brand">INNOVAFOOD G.C.</div>
+            <div class="company-slogan">🚀 Innovación que Alimenta el Futuro ✨</div>
+        </div>
+
+        <div class="main-content">
+            <div class="person-info">
+                <div class="person-name">Bryan Gabriel Camino F.</div>
+                <div class="person-title">🎯 Director General 👑</div>
+            </div>
+
+            <div class="contact-section">
+                <div class="contact-items">
+                    <div class="contact-row">
+                        <div class="contact-icon-wrapper icon-email"></div>
+                        <div class="contact-info">
+                            <div class="contact-type">Email Ejecutivo</div>
+                            <div class="contact-data">innovafoodgc21@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-row">
+                        <div class="contact-icon-wrapper icon-phone"></div>
+                        <div class="contact-info">
+                            <div class="contact-type">Línea Directa</div>
+                            <div class="contact-data">+593 99 842 6977</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-row">
+                        <div class="contact-icon-wrapper icon-location"></div>
+                        <div class="contact-info">
+                            <div class="contact-type">Oficina Principal</div>
+                            <div class="contact-data">Valencia, España 🇪🇸</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-row">
+                        <div class="contact-icon-wrapper icon-web"></div>
+                        <div class="contact-info">
+                            <div class="contact-type">Redes Sociales</div>
+                            <div class="contact-data">Facebook Business 📘</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="signature-area">
+                <div class="signature-header">✍️ Firma Digital Autorizada</div>
+                <div class="signature-text">Dir. General. Bryan Camino</div>
+                <div class="signature-date">Válida desde septiembre 2025</div>
+            </div>
+
+            <div class="action-links">
+                <a href="https://www.facebook.com/profile.php?id=100067747509320" class="action-link" target="_blank">
+                    📘 Facebook
+                </a>
+                <a href="mailto:innovafoodgc21@gmail.com" class="action-link">
+                    📧 Email
+                </a>
+                <a href="https://wa.me/59398426977" class="action-link" target="_blank">
+                    💬 WhatsApp
+                </a>
+            </div>
+
+            <div class="footer-badge">
+                <div class="footer-text">
+                    🌟 INNOVAFOOD G.C. • Tarjeta Digital Inteligente • 2025 ✨
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fecha automática
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateElement = document.querySelector('.signature-date');
+            const now = new Date();
+            const monthNames = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
+                "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+            
+            dateElement.textContent = `Válida desde ${monthNames[now.getMonth()]} ${now.getFullYear()}`;
+        });
+
+        // Efectos interactivos mejorados
+        document.querySelectorAll('.contact-row').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Efecto especial en el logo
+        document.querySelector('.company-logo-container').addEventListener('click', function() {
+            this.style.animation = 'none';
+            this.offsetHeight; // trigger reflow
+            this.style.animation = 'bounceIn 0.6s ease-out';
+        });
+
+        // Partículas flotantes (efecto visual)
+        function createFloatingEmoji() {
+            const emojis = ['✨', '🚀', '💫', '⭐', '🌟'];
+            const emoji = document.createElement('div');
+            emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.position = 'fixed';
+            emoji.style.left = Math.random() * 100 + 'vw';
+            emoji.style.animationDuration = Math.random() * 3 + 2 + 's';
+            emoji.style.opacity = Math.random();
+            emoji.style.fontSize = Math.random() * 10 + 10 + 'px';
+            emoji.style.animation = 'floatUp 4s ease-in-out infinite';
+            emoji.style.pointerEvents = 'none';
+            emoji.style.zIndex = '-1';
+            
+            document.body.appendChild(emoji);
+            
+            setTimeout(() => {
+                emoji.remove();
+            }, 4000);
+        }
+
+        // Crear partículas cada 3 segundos
+        setInterval(createFloatingEmoji, 3000);
+
+        // CSS para la animación de partículas
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatUp {
+                0% {
+                    bottom: -50px;
+                    transform: translateX(0px) rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    bottom: 100vh;
+                    transform: translateX(-200px) rotate(180deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
